@@ -9,9 +9,9 @@
 ```bash
 
 - Inicialmente criou as duas pastas, "Context e Models", em Models criou as seguintes classes: 
-#EnumStatusVenda, sendo uma classe enum, ela especifica o tipo de status a venda deve ter;
-#Fuuncionario, contém os dados do funcionario
-#Venda, contém: id, itensVendidos, Vendedor do tipo funcionario, status do tipo EnumStatusVenda e data;
+& EnumStatusVenda, sendo uma classe enum, ela especifica o tipo de status a venda deve ter;
+& Fuuncionario, contém os dados do funcionario
+& Venda, contém: id, itensVendidos, Vendedor do tipo funcionario, status do tipo EnumStatusVenda e data;
 
 - Em "Context" criou a classe VendaContext, que continha método que chama o bd, depois disso se fez a conexão com o banco de dados e criou as migrations;
 
