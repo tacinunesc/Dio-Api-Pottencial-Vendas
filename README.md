@@ -1,3 +1,9 @@
+##OBSERVAÇÕES
+```bash
+
+$ O desenvolvimento está na branch "master"
+
+```
 ## INSTRUÇÕES PARA O TESTE TÉCNICO
 
 - Crie um fork deste projeto (https://gitlab.com/Pottencial/tech-test-payment-api/-/forks/new). É preciso estar logado na sua conta Gitlab;
