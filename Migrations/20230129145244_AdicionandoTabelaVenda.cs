@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DiobootcampPottencialdotnet.Migrations
 {
     /// <inheritdoc />
-    public partial class TabelaVenda : Migration
+    public partial class AdicionandoTabelaVenda : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,6 +33,7 @@ namespace DiobootcampPottencialdotnet.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IntensVendidos = table.Column<int>(type: "int", nullable: false),
                     VendedorId = table.Column<int>(type: "int", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false),
                     Data = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

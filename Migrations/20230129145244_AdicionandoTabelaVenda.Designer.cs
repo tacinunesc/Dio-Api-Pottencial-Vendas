@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiobootcampPottencialdotnet.Migrations
 {
     [DbContext(typeof(VendaContext))]
-    [Migration("20230129143203_TabelaVenda")]
-    partial class TabelaVenda
+    [Migration("20230129145244_AdicionandoTabelaVenda")]
+    partial class AdicionandoTabelaVenda
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,9 @@ namespace DiobootcampPottencialdotnet.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IntensVendidos")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<int?>("VendedorId")

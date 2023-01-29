@@ -11,6 +11,8 @@ namespace Dio_bootcamp_Pottencial_dotnet.Models
         public int IntensVendidos { get; set; }
 
         public Funcionario Vendedor { get; set; }
+        public EnumStatusVenda Status { get; set; }
         public DateTime Data { get; set; }
+
     }
 }
