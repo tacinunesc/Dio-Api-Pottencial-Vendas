@@ -1,7 +1,7 @@
 ## OBSERVAÇÕES
 ```bash
 
-$ O desenvolvimento está na branch "master"
+- O desenvolvimento está na branch "master"
 
 ```
 ## INSTRUÇÕES PARA O TESTE TÉCNICO
