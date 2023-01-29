@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DiobootcampPottencialdotnet.Migrations
 {
     /// <inheritdoc />
-    public partial class AdicionandoTabelaVenda : Migration
+    public partial class CriarTabelaVenda : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,8 +17,8 @@ namespace DiobootcampPottencialdotnet.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Função = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Funcao = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,8 +31,8 @@ namespace DiobootcampPottencialdotnet.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IntensVendidos = table.Column<int>(type: "int", nullable: false),
-                    VendedorId = table.Column<int>(type: "int", nullable: true),
+                    ItensVendidos = table.Column<int>(type: "int", nullable: false),
+                    VendedorId = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     Data = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -43,7 +43,8 @@ namespace DiobootcampPottencialdotnet.Migrations
                         name: "FK_Vendas_Funcionario_VendedorId",
                         column: x => x.VendedorId,
                         principalTable: "Funcionario",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

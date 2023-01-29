@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiobootcampPottencialdotnet.Migrations
 {
     [DbContext(typeof(VendaContext))]
-    [Migration("20230129145244_AdicionandoTabelaVenda")]
-    partial class AdicionandoTabelaVenda
+    [Migration("20230129154836_CriarTabelaVenda")]
+    partial class CriarTabelaVenda
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,10 +33,12 @@ namespace DiobootcampPottencialdotnet.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Função")
+                    b.Property<string>("Funcao")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -55,13 +57,13 @@ namespace DiobootcampPottencialdotnet.Migrations
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IntensVendidos")
+                    b.Property<int>("ItensVendidos")
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VendedorId")
+                    b.Property<int>("VendedorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -75,7 +77,9 @@ namespace DiobootcampPottencialdotnet.Migrations
                 {
                     b.HasOne("Dio_bootcamp_Pottencial_dotnet.Models.Funcionario", "Vendedor")
                         .WithMany()
-                        .HasForeignKey("VendedorId");
+                        .HasForeignKey("VendedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Vendedor");
                 });
